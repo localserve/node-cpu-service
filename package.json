@@ -4,8 +4,9 @@
   "description": "A CPU resources service",
   "main": "src/service.js",
   "scripts": {
-    "test": "jasmine",
-    "build": "node_modules/.bin/tsc --project tsconfig.json"
+    "test": "node_modules/.bin/jasmine",
+    "build": "node_modules/.bin/tsc --project tsconfig.json",
+    "start": "node src/service.js"
   },
   "repository": {
     "type": "git",
@@ -29,7 +30,18 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
+    "@f0c1s/color-bgblue": "^0.0.1",
+    "@f0c1s/color-bgred": "^0.0.1",
     "@f0c1s/color-bgyellow": "^0.0.1",
+    "@f0c1s/color-blue": "^0.0.1",
+    "@f0c1s/color-green": "^0.0.1",
+    "@f0c1s/color-red": "^0.0.1",
+    "@f0c1s/color-yellow": "^0.0.1",
+    "@f0c1s/cpu.info.node.lib": "^2021.3.23",
+    "@f0c1s/node-common-log-lib": "^2022.3.23",
+    "@f0c1s/node-common-log-tag": "^2022.3.23",
+    "@f0c1s/node-sha-lib": "^2021.3.23",
+    "@m1yh3m/requestid.middleware": "^2021.1.1",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "helmet": "^4.4.1"

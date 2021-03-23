@@ -1,0 +1,7 @@
+{
+  "ports": {
+    "services": {
+      "cpu_info": 50123
+    }
+  }
+}

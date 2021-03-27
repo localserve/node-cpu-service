@@ -1,6 +1,6 @@
 {
   "name": "@localserve/node-cpu-service",
-  "version": "1.0.0",
+  "version": "2021.3.27",
   "description": "A CPU resources service",
   "main": "src/service.js",
   "scripts": {

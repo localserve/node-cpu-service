@@ -37,7 +37,8 @@ server.all('*', function (req, res, next) {
     }
 });
 server.get(path, function (_, res) {
-    var cpu_info = JSON.stringify(cpu_info_node_lib_1.cpuInfo());
+    var info = cpu_info_node_lib_1.cpuInfo();
+    var cpu_info = JSON.stringify(info);
     var ts = Date.now();
     var hash = hash_1.sha256(cpu_info);
     res.send(JSON.stringify({ hash: hash, cpu_info: cpu_info, ts: ts }));

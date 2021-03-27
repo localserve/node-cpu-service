@@ -38,7 +38,8 @@ server.all('*', (req: { path: any }, res: any, next: () => void) => {
 });
 
 server.get(path, (_, res) => {
-    const cpu_info = JSON.stringify(cpuInfo());
+    const info = cpuInfo();
+    const cpu_info = JSON.stringify(info);
     const ts = Date.now();
     const hash = sha256(cpu_info);
     res.send(JSON.stringify({hash, cpu_info, ts}));

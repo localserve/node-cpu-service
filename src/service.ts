@@ -7,6 +7,7 @@ import {join} from 'path';
 import {readFileSync} from 'fs';
 import CONFIG from '../config';
 import {TypesEnum} from '@f0c1s/node-common-log-lib';
+import {easyCors} from '@f0c1s/easy-cors';
 
 const {TAGS} = require('./lib/messages');
 
@@ -17,6 +18,7 @@ const requestID = require('@m1yh3m/requestid.middleware')().requestid;
 server.use(bodyParser.urlencoded({extended: false}));
 server.use(helmet());
 server.use(requestID);
+easyCors(server);
 
 const configFilename = join(__dirname, '../config.json');
 const config: CONFIG = JSON.parse(readFileSync(configFilename).toString());

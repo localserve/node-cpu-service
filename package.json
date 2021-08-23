@@ -38,6 +38,7 @@
     "@f0c1s/color-red": "^0.0.1",
     "@f0c1s/color-yellow": "^0.0.1",
     "@f0c1s/cpu.info.node.lib": "^2021.3.23",
+    "@f0c1s/easy-cors": "^2021.1.2",
     "@f0c1s/node-common-log-lib": "^2022.3.23",
     "@f0c1s/node-common-log-tag": "^2022.3.23",
     "@f0c1s/node-sha-lib": "^2021.3.23",

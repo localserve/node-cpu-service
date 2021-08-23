@@ -30,7 +30,7 @@ server.all('*', function (req, res, next) {
     log_1.default(TAGS.REQUEST, colors_1.red(_path) + " at " + colors_1.yellow(Date.now()));
     if (!allowedPath.includes(_path)) {
         log_1.default(TAGS.INFO, 'Not allowed.', node_common_log_lib_1.TypesEnum.WARN);
-        res.status(404).send('Not allowed');
+        res.status(404).send('Not allowed. Send request to cpu_info.');
     }
     else {
         next();
@@ -41,7 +41,7 @@ server.get(path, function (_, res) {
     var cpu_info = JSON.stringify(info);
     var ts = Date.now();
     var hash = hash_1.sha256(cpu_info);
-    res.send(JSON.stringify({ hash: hash, cpu_info: cpu_info, ts: ts }));
+    res.json({ hash: hash, cpu_info: cpu_info, ts: ts });
 });
 /* SERVER IS READY */
 var port = config.ports.services.cpu_info;

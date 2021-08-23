@@ -31,7 +31,7 @@ server.all('*', (req: { path: any }, res: any, next: () => void) => {
     log(TAGS.REQUEST, `${red(_path)} at ${yellow(Date.now())}`);
     if (!allowedPath.includes(_path)) {
         log(TAGS.INFO, 'Not allowed.', TypesEnum.WARN);
-        res.status(404).send('Not allowed');
+        res.status(404).send('Not allowed. Send request to cpu_info.');
     } else {
         next();
     }
@@ -42,7 +42,7 @@ server.get(path, (_, res) => {
     const cpu_info = JSON.stringify(info);
     const ts = Date.now();
     const hash = sha256(cpu_info);
-    res.send(JSON.stringify({hash, cpu_info, ts}));
+    res.json({hash, cpu_info, ts});
 });
 /* SERVER IS READY */
 const port = config.ports.services.cpu_info;
